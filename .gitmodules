@@ -1,0 +1,3 @@
+[submodule "curv/Libraries/ios-charts"]
+	path = curv/Libraries/ios-charts
+	url = https://github.com/danielgindi/ios-charts.git
