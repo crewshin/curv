@@ -50,14 +50,13 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
         yearsTextField.layer.borderColor = UIColor.whiteColor().CGColor
         yearsTextField.textColor = UIColor.whiteColor()
         
-        
-        let anim = "fadeInRight"
-        let curve = "easeInOut"
-        
+        // Set textfield delegates so we can do 'important' things.
         baseAmountTextField.delegate = self
         percentReturnTextField.delegate = self
         yearsTextField.delegate = self
         
+        // When view becomes visible, pop up keyboard on this textfield so it's ready to rock.
+        baseAmountTextField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +66,8 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
 
     @IBAction func textfieldChanged(sender: AnyObject) {
         println("BLAH")
+        
+        self.ripIt()
     }
 
     @IBAction func goButton(sender: AnyObject) {
@@ -232,9 +233,11 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("priceCell", forIndexPath: indexPath) as! UITableViewCell
         
-        var numberFormatter = NSNumberFormatter()
-        numberFormatter.numberStyle = .CurrencyStyle
-        let numberAsString = numberFormatter.stringFromNumber(dataArray[indexPath.row])!
+//        var numberFormatter = NSNumberFormatter()
+//        numberFormatter.numberStyle = .CurrencyStyle
+//        let numberAsString = numberFormatter.stringFromNumber(dataArray[indexPath.row])!
+        
+        let numberAsString = Utilities.convertToCurrencyFormat(dataArray[indexPath.row])
         
         let txt = "Year \(indexPath.row): \(numberAsString)"
         cell.textLabel?.text = txt

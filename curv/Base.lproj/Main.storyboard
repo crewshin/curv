@@ -48,7 +48,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="textfieldChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="dM4-dk-vCq"/>
+                                    <action selector="textfieldChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HJK-VW-lAn"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zhK-MN-yQi"/>
                                 </connections>
                             </textField>
@@ -82,7 +82,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="textfieldChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zjK-ek-b4p"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="B3L-gZ-Kgk"/>
                                 </connections>
                             </textField>
@@ -138,7 +137,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="textfieldChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="LKv-1K-TJm"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="wOg-Nm-wWr"/>
                                 </connections>
                             </textField>
@@ -208,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="1649"/>
+            <point key="canvasLocation" x="960" y="1781"/>
         </scene>
     </scenes>
     <resources>

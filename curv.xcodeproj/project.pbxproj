@@ -20,6 +20,7 @@
 		7E6FA3801B3BB87600E6F434 /* curvTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6FA37F1B3BB87600E6F434 /* curvTests.swift */; };
 		7E6FA4321B3BBE9500E6F434 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6FA4311B3BBE8C00E6F434 /* Charts.framework */; };
 		7E6FA4341B3BBFE000E6F434 /* DataCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6FA4331B3BBFE000E6F434 /* DataCalculator.swift */; };
+		7EE025EF1B3D9F7D001B3FD7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE025EE1B3D9F7D001B3FD7 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		7E6FA42C1B3BBE8C00E6F434 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Libraries/ios-charts/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		7E6FA4331B3BBFE000E6F434 /* DataCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCalculator.swift; path = Classes/DataCalculator.swift; sourceTree = "<group>"; };
 		7E6FA4351B3C4ED900E6F434 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		7EE025EE1B3D9F7D001B3FD7 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Classes/Utilities.swift; sourceTree = "<group>"; };
 		8DB8D3A587B7477F3820446F /* Pods-curv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curv.release.xcconfig"; path = "Pods/Target Support Files/Pods-curv/Pods-curv.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				7E6FA4331B3BBFE000E6F434 /* DataCalculator.swift */,
+				7EE025EE1B3D9F7D001B3FD7 /* Utilities.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			files = (
 				7E6FA4341B3BBFE000E6F434 /* DataCalculator.swift in Sources */,
 				7E6FA36C1B3BB87600E6F434 /* ViewController.swift in Sources */,
+				7EE025EF1B3D9F7D001B3FD7 /* Utilities.swift in Sources */,
 				7E6FA36A1B3BB87600E6F434 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

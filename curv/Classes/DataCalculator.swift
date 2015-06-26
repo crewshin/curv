@@ -13,6 +13,7 @@ class DataCalculator: NSObject {
    
     class func calculateCurve(baseAmount: Double, percentReturn: Double, years: Int) -> [Double]
     {
+        // Orig.
 //        var dataEntries: [ChartDataEntry] = []
 //        
 //        // Calc decimal of percent.
@@ -48,28 +49,61 @@ class DataCalculator: NSObject {
 //        println("tmpArray: \(tmpArray)")
         
         
+
+        // 2.
+//        if years < 1 {
+//            return [Double]()
+//        }
+//        
+//        let returnPercent = percentReturn * 0.01
+//        
+//        println("====================================================")
+//        println(returnPercent)
+//        
+//        var array = [Double](count: years, repeatedValue: 0)
+//        var previousValue = 0.0
+//        var currentValue = baseAmount
+//        
+//        for i in 0..<years {
+//            array[i] = currentValue
+//            let p2 = currentValue
+//            currentValue = currentValue * returnPercent + previousValue
+//            previousValue = p2
+//        }
+//        
+//        println(array)
         
-//        let baseAmount = 50000.0
-//        let returnPercent = 2.0
-//        let years = 10
         
-        let returnPercent = percentReturn * 0.01
         
-        // you know the size of the array so you don't have to append to it and just use the subscript which is much faster
-        var array = [Double](count: years, repeatedValue: 0)
-        var previousValue = 0.0
-        var currentValue = baseAmount
-        
-        for i in 0..<years {
-            array[i] = currentValue
-            let p2 = currentValue
-            currentValue = currentValue * returnPercent + previousValue
-            previousValue = p2
+        // 3.
+        if years < 1 {
+            return [Double]()
         }
         
-        print(array)
+        let percentReturnAsDecimal = percentReturn * 0.01
         
-        return array
+        // We know the size of the array, no need to append
+        var result = [Double](count: years, repeatedValue: 0.0)
+        result[0] = baseAmount
+        
+        // No need to do this in the loop
+        if years > 1 {
+            result[1] = baseAmount * percentReturnAsDecimal
+        }
+        
+        // Loop through years 2+
+        for year in 2 ..< years {
+            let lastYear = result[year - 1]
+            let yearBeforeLast = result[year - 2]
+            result[year] = (lastYear * percentReturnAsDecimal) + yearBeforeLast
+        }
+        
+        
+        
+        
+        
+        
+        return result
     }
     
 }
