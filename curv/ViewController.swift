@@ -23,7 +23,6 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         lineChartView.delegate = self
 //        lineChartView.noDataText = "Please enter some values above to calculate a curve."
@@ -63,21 +62,6 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-//    @IBAction func textfieldChanged(sender: AnyObject) {
-//        println("BLAH")
-//        
-//        if !baseAmountTextField.text.isEmpty && !percentReturnTextField.text.isEmpty && !yearsTextField.text.isEmpty
-//        {
-//            self.ripIt()
-//        }
-//        else
-//        {
-//            var alert = UIAlertController(title: "", message: "Please enter values into all textfields", preferredStyle: UIAlertControllerStyle.Alert)
-//            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-//            self.presentViewController(alert, animated: true, completion: nil)
-//        }
-//    }
 
     @IBAction func goButton(sender: AnyObject) {
         baseAmountTextField.resignFirstResponder()
@@ -191,46 +175,9 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
         
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-//        println("aaaaaaaaaa")
-        
-//        textField.resignFirstResponder()
-        
-//        baseAmountTextField.resignFirstResponder()
-//        percentReturnTextField.resignFirstResponder()
-//        yearsTextField.resignFirstResponder()
-        
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        
-//        NSInteger nextTag = textField.tag + 1;
-//        // Try to find next responder
-//        UIResponder *nextResponder = [textField.superview viewWithTag:nextTag];
-//        if (nextResponder) {
-//            // Found next responder, so set it.
-//            [nextResponder becomeFirstResponder];
-//        } else {
-//            // Not found, so remove keyboard.
-//            [self signupButton:nil];
-//            [textField resignFirstResponder];
-//        }
-//        return false; // We do not want UITextField to insert line-breaks.
-        
-        
-//        var nextTag = textField.tag + 1
-//        var nextResponder = textField.superview?.viewWithTag(nextTag)
-//        if let nextResponder = nextResponder
-//        {
-//            nextResponder?.becomeFirstResponder()
-//        }
-//        else
-//        {
-//            textField.resignFirstResponder()
-//        }
-        
-        
+        // Advance to the next textfield.
         if (textField === baseAmountTextField)
         {
             percentReturnTextField.becomeFirstResponder()
@@ -244,9 +191,7 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
             yearsTextField.resignFirstResponder()
         }
         
-
-//        textField.resignFirstResponder()
-        
+        // Check if the textfields have data.
         if !baseAmountTextField.text.isEmpty && !percentReturnTextField.text.isEmpty && !yearsTextField.text.isEmpty && textField === yearsTextField
         {
             self.ripIt()
@@ -270,12 +215,10 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("priceCell", forIndexPath: indexPath) as! UITableViewCell
         
-//        var numberFormatter = NSNumberFormatter()
-//        numberFormatter.numberStyle = .CurrencyStyle
-//        let numberAsString = numberFormatter.stringFromNumber(dataArray[indexPath.row])!
-        
+        // Format the string into a currency format.
         let numberAsString = Utilities.convertToCurrencyFormat(dataArray[indexPath.row])
         
+        // Set text string.
         let txt = "Year \(indexPath.row): \(numberAsString)"
         cell.textLabel?.text = txt
         

@@ -22,7 +22,7 @@
 		<key>29BC1C76C6B9C5C13B1231CEC599D9B4F88DC93D</key>
 		<string>..</string>
 		<key>9025163822AAEA7A2D8AC9210D0874A56F62B462</key>
-		<string>..curv/Libraries/ios-charts/</string>
+		<string>..curv/Libraries/ios-charts</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>gitlab.com:crewshin/curv.git</string>

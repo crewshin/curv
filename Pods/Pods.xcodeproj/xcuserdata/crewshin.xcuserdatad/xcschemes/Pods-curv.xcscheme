@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D486D444EB2B73117120124A"
+               BlueprintIdentifier = "0078C5AC2F41EFC612235203"
                BuildableName = "Pods_curv.framework"
                BlueprintName = "Pods-curv"
                ReferencedContainer = "container:Pods.xcodeproj">
