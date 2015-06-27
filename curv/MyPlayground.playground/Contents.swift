@@ -53,7 +53,7 @@ import UIKit
 
 
 let baseAmount = 50000.0
-let percentReturn = 50.0
+let percentReturn = 100.0
 let years = 10
 
 // 3.
@@ -69,12 +69,37 @@ result[0] = baseAmount
 
 // No need to do this in the loop
 if years > 1 {
-    result[1] = baseAmount * percentReturnAsDecimal
+    //            let lastYear = result[year - 1]
+    //            let yearBeforeLast = result[year - 2]
+//    result[1] = baseAmount * percentReturnAsDecimal
+    result[1] = baseAmount * percentReturnAsDecimal + result[0]
 }
 
 // Loop through years 2+
 for year in 2 ..< years {
     let lastYear = result[year - 1]
     let yearBeforeLast = result[year - 2]
-    result[year] = (lastYear * percentReturnAsDecimal) + yearBeforeLast
+//    result[year] = (lastYear * percentReturnAsDecimal) + yearBeforeLast
+    result[year] = (lastYear * percentReturnAsDecimal) + lastYear
 }
+
+
+
+//$50,000.00
+//$100,000.00
+//$250,000.00
+//$600,000.00
+//$1,450,000.00
+//$3,500,000.00
+//$8,450,000.00
+//$20,400,000.00
+//$49,250,000.00
+
+
+
+
+
+
+
+
+

@@ -64,18 +64,37 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func textfieldChanged(sender: AnyObject) {
-        println("BLAH")
-        
-        self.ripIt()
-    }
+//    @IBAction func textfieldChanged(sender: AnyObject) {
+//        println("BLAH")
+//        
+//        if !baseAmountTextField.text.isEmpty && !percentReturnTextField.text.isEmpty && !yearsTextField.text.isEmpty
+//        {
+//            self.ripIt()
+//        }
+//        else
+//        {
+//            var alert = UIAlertController(title: "", message: "Please enter values into all textfields", preferredStyle: UIAlertControllerStyle.Alert)
+//            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
+//    }
 
     @IBAction func goButton(sender: AnyObject) {
         baseAmountTextField.resignFirstResponder()
         percentReturnTextField.resignFirstResponder()
         yearsTextField.resignFirstResponder()
         
-        self.ripIt()
+        
+        if !baseAmountTextField.text.isEmpty && !percentReturnTextField.text.isEmpty && !yearsTextField.text.isEmpty
+        {
+            self.ripIt()
+        }
+        else
+        {
+            var alert = UIAlertController(title: "", message: "Please enter values into all textfields", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     func ripIt()
@@ -212,9 +231,27 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
 //        }
         
         
+        if (textField === baseAmountTextField)
+        {
+            percentReturnTextField.becomeFirstResponder()
+        }
+        else if (textField === percentReturnTextField)
+        {
+            yearsTextField.becomeFirstResponder()
+        }
+        else if (textField === yearsTextField)
+        {
+            yearsTextField.resignFirstResponder()
+        }
+        
 
-        textField.resignFirstResponder()
-        self.ripIt()
+//        textField.resignFirstResponder()
+        
+        if !baseAmountTextField.text.isEmpty && !percentReturnTextField.text.isEmpty && !yearsTextField.text.isEmpty && textField === yearsTextField
+        {
+            self.ripIt()
+        }
+        
         return false
     }
     
