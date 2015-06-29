@@ -14,18 +14,19 @@ class DataCalculator: NSObject {
     class func calculateCurve(baseAmount: Double, percentReturn: Double, years: Int) -> [Double]
     {
         let percentReturnAsDecimal = percentReturn * 0.01
+        let yearsP1 = years + 1 // This is to calculate data for 5 years. Excluding the starting base account value.
         
         // We know the size of the array, no need to append
-        var result = [Double](count: years, repeatedValue: 0.0)
+        var result = [Double](count: yearsP1, repeatedValue: 0.0)
         result[0] = baseAmount
         
         // No need to do this in the loop
-        if years > 1 {
+        if yearsP1 > 1 {
             result[1] = baseAmount * percentReturnAsDecimal + result[0]
         }
         
         // Loop through years 2+
-        for year in 2 ..< years {
+        for year in 2 ..< yearsP1 {
             let lastYear = result[year - 1]
             result[year] = (lastYear * percentReturnAsDecimal) + lastYear
         }
